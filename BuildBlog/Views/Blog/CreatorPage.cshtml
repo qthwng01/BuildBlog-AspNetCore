@@ -1,0 +1,18 @@
+﻿@model BuildBlog.Models.BlogEntry
+
+@{
+    ViewData["Title"] = "Creator Post";
+}
+
+
+<h5 class="mb-4">Create post</h5>
+<div>
+
+    <form asp-controller="Blog" asp-action="CreatorPage" method="POST">
+        @*<input hidden asp-for=Id />*@
+        <textarea asp-for="Content" id="editor"></textarea>
+        <button type="submit" class="btn btn-primary mt-4">Submit</button>
+        <a class="btn btn-secondary mt-4" asp-action="Index" asp-controller="Blog">Back</a>
+    </form>
+
+</div>

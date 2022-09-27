@@ -1,0 +1,25 @@
+﻿
+@model IEnumerable<BuildBlog.Models.BlogEntry>
+
+@{ 
+    ViewData["Title"] = "All Posts";
+}
+
+<h5>Posts</h5>
+<hr/>
+
+<div>
+    @foreach(var item in Model)
+    {
+    <div class="card mb-4">
+        <div class="card-body">
+            @Html.Raw(item.Content)
+        </div>
+
+        <div class="card-footer">
+            @*@Html.ActionLink("Edit", "CreatorPage", new { Id = item.Id }, new { @class = "btn btn-sm btn-secondary" })*@
+            <a asp-controller="Blog" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary mt-4">Edit Post</a>
+        </div>
+    </div>
+    }
+</div>
